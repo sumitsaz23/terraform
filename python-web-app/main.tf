@@ -31,7 +31,7 @@ resource "aws_vpc" "vpc_python_web_app" {
 # Create Subnets
 
 resource "aws_subnet" "py_web_app_subnet_1a_Public" {
-  vpc_id            = aws_vpc.var.vpc_name.id
+  vpc_id            = aws_vpc.vpc_python_web_app.id
   cidr_block        = var.py_web_app_subnet_1a_Public_cidr_block
   availability_zone = "ap-south-1a"
   map_public_ip_on_launch = true
