@@ -16,7 +16,7 @@ variable "app_name" {
 variable "vpc_cidr_block_python_web_app" {
   description = "The CIDR block for the VPC"
   type        = string
-  default     = "10.0.0/16"
+  default     = "10.0.0.0/16"
   
 }
 
@@ -64,7 +64,7 @@ variable "py_web_app_subnet_1a_private_name" {
 variable "py_web_app_subnet_1a_private_cidr_block" {
   description = "The CIDR block for the first subnet in availability zone 1a"
   type        = string
-  default     = "10.1.0.0/24"
+  default     = "10.0.1.0/24"
   
 }
 
@@ -78,6 +78,6 @@ variable "py_web_app_subnet_1b_private_name" {
 variable "py_web_app_subnet_1b_private_cidr_block" {
   description = "The CIDR block for the first subnet in availability zone 1b"
   type        = string
-  default     = "10.2.0.0/24"
+  default     = "10.0.2.0/24"
   
 }
