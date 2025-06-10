@@ -110,3 +110,21 @@ resource "aws_route_table_association" "public_subnet_1b" {
   subnet_id      = aws_subnet.py_web_app_subnet_1b_Public.id
   route_table_id = aws_route_table.public_route_table.id
 }
+
+# Create a route table for private subnets
+resource "aws_route_table" "private_route_table" {
+  vpc_id = aws_vpc.vpc_python_web_app.id
+  tags = {
+    Name = "private-route-table-${var.app_name}"
+    CreatedBy = "Terraform"
+  }
+}
+# Associate the private route table with the private subnets
+resource "aws_route_table_association" "private_subnet_1a" {
+  subnet_id      = aws_subnet.py_web_app_subnet_1a_Private.id
+  route_table_id = aws_route_table.private_route_table.id
+}
+resource "aws_route_table_association" "private_subnet_1b" {
+  subnet_id      = aws_subnet.py_web_app_subnet_1b_Private.id
+  route_table_id = aws_route_table.private_route_table.id
+}
