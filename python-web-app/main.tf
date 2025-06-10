@@ -23,7 +23,7 @@ resource "aws_vpc" "vpc_python_web_app" {
   tags = {
     Name = var.VPC_name
     CreatedBy = "Terraform"
-    app = "python_web_app"
+    app = "var.app_name"
 
   }
 }
@@ -38,7 +38,7 @@ resource "aws_subnet" "py_web_app_subnet_1a_Public" {
   tags = {
     Name = "var.py_web_app_subnet_1a_Public_name"
     CreatedBy = "Terraform"
-    app = "python_web_app"
+    app = "var.app_name"
  }
 }
 
@@ -51,7 +51,7 @@ resource "aws_subnet" "py_web_app_subnet_1b_Public" {
   tags = {
     Name = "var.py_web_app_subnet_1b_Public_name"
     CreatedBy = "Terraform"
-    app = "python_web_app"
+    app = "var.app_name"
  }
   
 }
