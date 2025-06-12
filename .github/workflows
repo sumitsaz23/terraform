@@ -1,0 +1,25 @@
+name: "Deploy k8s on proxmox with Terraform"
+
+on:
+#  push:
+#    branches:
+#    - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.5.7
+
+    - name: Initialize Terraform
+      run: terraform init
+
+    - name: Apply Terraform configuration
+      run: terraform apply -auto-approve
